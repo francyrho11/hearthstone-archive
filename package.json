@@ -1,0 +1,27 @@
+{
+  "name": "hearthstone-archive",
+  "version": "1.0.0",
+  "description": "A Wordpress Plugin showing the Hearthstone card archive",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": "git@github.com:francyrho11/hearthstone-archive.git",
+  "author": "Francesco Rho <eleven@rhofrances.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
