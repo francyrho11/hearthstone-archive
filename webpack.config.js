@@ -7,14 +7,14 @@ const config = require('./config.json');
 // DEVELOPMENT
 module.exports = {
     mode: 'development',
-    entry: './src/app.js',
+    entry: './src/app.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [{
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
@@ -29,6 +29,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'] 
     },
     plugins: [
         new BrowserSyncPlugin({
@@ -50,14 +53,14 @@ module.exports = {
 // PRODUCTION
 module.exports = {
     mode: 'production',
-    entry: './src/app.js',
+    entry: './src/app.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [{
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
@@ -72,6 +75,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'] 
     },
     plugins: [
         new BrowserSyncPlugin({

@@ -131,7 +131,13 @@ class Hearthstone_Archive
 
     public function load_bundle()
     {
+        
         wp_enqueue_script($this->plugin_domain . '-bundle', plugin_dir_url(__FILE__) . 'dist/bundle.js', array(), $this->version, 'all');
+        $data = array( 
+            'apiUrl' => get_option($this->plugin_domain . 'api_url', ''),
+            'apiKey' => get_option($this->plugin_domain . 'api_key', '')
+        );
+        wp_localize_script($this->plugin_domain . '-bundle', 'wp_options', $data);
         wp_enqueue_style($this->plugin_domain . '-css', plugin_dir_url(__FILE__) . 'dist/style.css', array(), $this->version, 'all');
     }
 
